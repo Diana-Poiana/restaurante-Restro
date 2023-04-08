@@ -13,37 +13,37 @@ const browserSync = require('browser-sync').create();
 function browsersync() {
   browserSync.init({
     server: {
-      baseDir: 'app/'
+      baseDir: 'docs/'
     },
     notify: false
   })
 }
 
 function styles() {
-  return src('app/scss/style.scss')
+  return src('docs/scss/style.scss')
   .pipe(scss({outputStyle: 'compressed'}))
   .pipe(concat('style.min.css'))
   .pipe(autoprefixer({overrideBrowserslist: ['last 10 versions'],
   grid: true
   }))
-  .pipe(dest('app/css'))
+  .pipe(dest('docs/css'))
   .pipe(browserSync.stream())
 }
 
 function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
-    'app/js/main.js',
+    'docs/js/main.js',
     'node_modules/slick-carousel/slick/slick.js',
   ])
   .pipe(concat('main.min.js'))
   .pipe(uglify())
-  .pipe(dest('app/js'))
+  .pipe(dest('docs/js'))
   .pipe(browserSync.stream())
 }
 
 function svgSprites() {
-  return src('app/images/icons/*.svg')
+  return src('docs/images/icons/*.svg')
     .pipe(cheerio({
       run: ($) => {
         $("[fill]").removeAttr("fill");
@@ -63,11 +63,11 @@ function svgSprites() {
         },
       })
     )
-    .pipe(dest('app/images'));
+    .pipe(dest('docs/images'));
 }
 
 function images() {
-  return src('app/images/**/*.*')
+  return src('docs/images/**/*.*')
   .pipe(imagemin([
     imagemin.gifsicle({ interlaced: true }),
     imagemin.mozjpeg({ quality: 75, progressive: true}),
@@ -84,10 +84,10 @@ function images() {
 
 function build () {
   return src([
-    'app/**/*.html',
-    'app/css/style.min.css',
-    'app/js/main.min.js',
-  ], {base: 'app'})
+    'docs/**/*.html',
+    'docs/css/style.min.css',
+    'docs/js/main.min.js',
+  ], {base: 'docs'})
   .pipe(dest('dist'))
 }
 
@@ -96,10 +96,10 @@ function cleanDist() {
 }
 
 function watching() {
-  watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
-  watch(['app/images/icons/*.svg'], svgSprites);
-  watch(['app/**/*.html']).on('change', browserSync.reload);
+  watch(['docs/scss/**/*.scss'], styles);
+  watch(['docs/js/**/*.js', '!docs/js/main.min.js'], scripts);
+  watch(['docs/images/icons/*.svg'], svgSprites);
+  watch(['docs/**/*.html']).on('change', browserSync.reload);
 }
 
 exports.styles = styles;
