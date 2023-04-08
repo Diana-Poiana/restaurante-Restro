@@ -554,8 +554,7 @@
         </h2>
         <div class="customer-review__list">
 
-          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')" width="1200"
-            height="566">
+          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')">
 
             <blockquote class="customer-review__text">
               Este es un simple texto de relleno solo esta para rellenar, y mostrar el lugar donde iria un texto real de
@@ -567,8 +566,7 @@
             </blockquote>
           </div>
 
-          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')" width="1200"
-            height="566">
+          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')">
             <a href="https://g.co/kgs/1yj3c4">
               <blockquote class="customer-review__text">
                 Muy buena relación calidad precio, gran variedad para almuerzos. Recomendable
@@ -580,8 +578,7 @@
             </a>
           </div>
 
-          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')" width="1200"
-            height="566">
+          <div class="customer-review__item" style="background-image: url('images/bg-review.jpg')">
 
             <blockquote class="customer-review__text">
               Fuimos ayer a comer y todo muy bueno , os lo recomiendo , gracias a este gran restaurante , volveremos
@@ -731,37 +728,35 @@
             </span>
           </h2>
 
-          <form class="reservation__form" action="#" name="reservation-form" id="reservation-form">
+          <form class="reservation__form" action="#" name="form" id="form">
 
-            <label class="reservartion__label sr-only" for="name-input">Nombre</label>
-            <input class="reservation__input" type="text" placeholder="Nombre" name="name-input" id="name-input"
-              required>
+            <label class="reservartion__label sr-only" for="name">Nombre</label>
+            <input class="reservation__input _req" type="text" placeholder="Nombre" name="name" id="name">
 
-            <label class="reservartion__label sr-only" for="email-input">Email</label>
-            <input class="reservation__input" type="email" placeholder="Email" name="email-input" id="email-input"
-              required>
+            <label class="reservartion__label sr-only" for="email">Email</label>
+            <input class="reservation__input _email _req" type="email" placeholder="Email" name="email"
+              id="email">
 
-            <label class="reservartion__label sr-only" for="phone-input">Telefono</label>
-            <input class="reservation__input" type="tel" placeholder="Telefono" name="phone-input" id="phone-input"
-              required>
+            <label class="reservartion__label sr-only" for="phone">Telefono</label>
+            <input class="reservation__input _req" type="tel" placeholder="Telefono" name="phone"
+              id="phone">
 
-            <label class="reservartion__label sr-only" for="date-input">Fecha</label>
-            <input class="reservation__input reservation__input--date" type="text" placeholder="Fecha" name="date-input"
-              id="date-input" required>
+            <label class="reservartion__label sr-only" for="date">Fecha</label>
+            <input class="reservation__input _req reservation__input--date" type="text" placeholder="Fecha"
+              name="date" id="date">
 
-            <label class="reservartion__label sr-only" for="time-input">Hora</label>
-            <input class="reservation__input reservation__input--time" type="text" placeholder="Hora" name="time-input"
-              id="time-input" required>
+            <label class="reservartion__label sr-only" for="time">Hora</label>
+            <input class="reservation__input _req reservation__input--time" type="text" placeholder="Hora"
+              name="time" id="time">
 
-            <label class="reservartion__label sr-only" for="qty-input">Cantidad de Personas</label>
-            <input class="reservation__input" type="text" placeholder="Cantidad de Personas" name="qty-input"
-              id="qty-input" required>
+            <label class="reservartion__label sr-only" for="qty">Cantidad de Personas</label>
+            <input class="reservation__input _req" type="text" placeholder="Cantidad de Personas" name="qty"
+              id="qty">
 
             <label class="reservartion__label sr-only" for="mensaje">Mensaje</label>
-            <textarea class="reservation__textarea" placeholder="Mensaje" name="mensaje" id="mensaje"
-              required></textarea>
+            <textarea class="reservation__textarea" placeholder="Mensaje" name="mensaje" id="mensaje"></textarea>
 
-            <button class="reservation__button" type="button">
+            <button class="reservation__button" type="submit">
               Encargar
             </button>
           </form>
