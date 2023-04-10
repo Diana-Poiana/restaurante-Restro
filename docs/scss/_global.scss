@@ -23,6 +23,11 @@ body {
     padding-left: 24px;
     padding-right: 24px;
   }
+
+  @media (max-width: $sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .sr-only {
